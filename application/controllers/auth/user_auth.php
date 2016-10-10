@@ -49,15 +49,17 @@ class user_auth extends CI_Controller {
 			$email 				= $this->input->post('email');
 			$password 			= $this->input->post('password');
 			$confirm_password 	= $this->input->post('confirm-password');
+			$status 		 	= $this->input->post('status');
 			if ($password == $confirm_password) 
 			{
 				$data_insert = array(
 									'user_name'		=>$user_name,
 									'email'			=>$email,
 									'user_password' =>md5($password),
-									'user_status'	=>'1',
+									'user_status'	=>$status,
 								);
 				$this->auth->insert('user',$data_insert);
+				// redirect('auth/user_auth','refresh');
 			}
 			else
 			{
