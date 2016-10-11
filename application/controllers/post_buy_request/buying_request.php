@@ -11,7 +11,7 @@ class buying_request extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('post_buy_request/request_offer_product',False);
+		$this->load->view('index');
 	}
 
 	public function generate_random_string($name_length = 8) {
